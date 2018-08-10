@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<font>
+  <font-aliases>
+	  <mapping name="serif" font-family="Times-Roman" /> 
+	  <mapping name="sans-serif" font-family="Helvetica" /> 
+	  <mapping name="monospace" font-family="Courier" /> 
+	  <mapping name="cursive" font-family="Times-Roman" /> 
+	  <mapping name="fantasy" font-family="Times-Roman" /> 
+	  <mapping name="stag" font-family="Stag Sans Light" /> 
+  </font-aliases>
+  
+  <search-sequences>
+	  <sequence locale="zh">
+		  <catalog name="Western" /> 
+		  <catalog name="Chinese" /> 
+		  <catalog name="Japanese" /> 
+		  <catalog name="Korean" /> 
+	  </sequence>
+	  <sequence locale="ja">
+		  <catalog name="Western" /> 
+		  <catalog name="Japanese" /> 
+		  <catalog name="Chinese" /> 
+		  <catalog name="Korean" /> 
+	  </sequence>
+	  <sequence locale="ko">
+	  <catalog name="Western" /> 
+	  <catalog name="Korean" /> 
+	  <catalog name="Chinese" /> 
+	  <catalog name="Japanese" /> 
+  </sequence>
+  </search-sequences>
+ 
+  <composite-font name="all-fonts" font-family="Times-Roman" /> 
+ 
+  <font-paths>
+	  <path path="C:/dev/birt/fonts" /> 
+	  <path path="/srv/www/microservices/birt/fonts" /> 
+  </font-paths>
+  
+  <font-encodings>
+	  <encoding font-family="Times-Roman" encoding="Cp1252" /> 
+	  <encoding font-family="Helvetica" encoding="Cp1252" /> 
+	  <encoding font-family="Courier" encoding="Cp1252" /> 
+	  <encoding font-family="Zapfdingbats" encoding="Cp1252" /> 
+	  <encoding font-family="Symbol" encoding="Cp1252" /> 
+	  <encoding font-family="STSong-Light" encoding="UniGB-UCS2-H" /> 
+	  <encoding font-family="STSongStd-Light" encoding="UniGB-UCS2-H" /> 
+	  <encoding font-family="MHei-Medium" encoding="UniCNS-UCS2-H" /> 
+	  <encoding font-family="MSung-Light" encoding="UniCNS-UCS2-H" /> 
+	  <encoding font-family="MSungStd-Light" encoding="UniCNS-UCS2-H" /> 
+	  <encoding font-family="HeiseiMin-W3" encoding="UniJIS-UCS2-H" /> 
+	  <encoding font-family="HeiseiKakuGo-W5" encoding="UniJIS-UCS2-H" /> 
+	  <encoding font-family="KozMinPro-Regular" encoding="UniJIS-UCS2-H" /> 
+	  <encoding font-family="HYGoThic-Medium" encoding="UniKS-UCS2-H" /> 
+	  <encoding font-family="HYSMyeongJo-Medium" encoding="UniKS-UCS2-H" /> 
+	  <encoding font-family="HYSMyeongJoStd" encoding="UniKS-UCS2-H" /> 
+  </font-encodings>
+</font>

@@ -1,0 +1,15 @@
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://localhost:1111/eureka/
+
+server:
+  port: 2050
+  ssl:
+    enabled: true
+    key-alias: microservices
+    key-store: /ssl/keystore
+    #key-store-type: PKCS12
+    key-store-password:
+    key-password:

@@ -1,0 +1,51 @@
+# Spring properties
+spring:
+  application:
+    name: cif-service  # Identify this application
+  freemarker:
+    enabled: false     # Ignore Eureka dashboard FreeMarker templates
+  thymeleaf:
+    cache: false       # Allow Thymeleaf templates to be reloaded at runtime
+    prefix: classpath:/templates/    # Trailing / mandatory
+                       # Template location for this application only
+
+# Map the error path to error template (for Thymeleaf)
+error:
+  path=/error
+
+    
+  # Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://localhost:1111/eureka/
+
+server:
+  port: 2079
+  ssl:
+    enabled: true
+    key-alias: microservices
+    key-store: "c:/dev/cert/keystore"
+    #key-store-type: PKCS12
+    key-store-password: changeit
+    key-password: changeit
+    
+    
+    
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: https://localhost:9999/oauth/token_key  # Tells the JWT framework to fetch the public key from the authorization server during startup
+
+config:
+  oauth2:
+    clientID: confidential
+    clientSecret: 1e8a7f99-d65c-4d94-9676-b315a7a3a337
+    grantType: client_credentials
+    accessTokenUri: https://localhost:9999/oauth/token
+    userAuthorizationUri: https://localhost:9999/oauth/authorize
+    resourceURI: https://avaloq-service
+
+logging.level.org.springframework.security.oauth2: DEBUG
+    

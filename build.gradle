@@ -1,0 +1,73 @@
+
+buildscript {
+  ext {
+    springBootVersion = '1.4.1.RELEASE'
+  }
+  repositories {
+    if (project.hasProperty('nexus')) {
+      maven {
+        url nexus
+      }
+    }
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'eclipse'
+
+springBoot {
+  executable = true
+}
+
+jar {
+  version =  '0.1.0'
+}
+
+repositories {
+  if (project.hasProperty('nexus')) {
+    maven {
+      url nexus
+    }
+  }
+}
+
+
+dependencyManagement {
+  imports {
+    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Brixton.RELEASE'
+  }
+}
+
+springBoot {
+  mainClass = "ch.bbva.cif.Application"
+}
+
+dependencies {
+  compile("ch.bbva:birt-pdf:0.1.0")
+  compile("ch.bbva:lila:0.4.0")
+  compile("org.apache.pdfbox:pdfbox:1.8.6")
+
+  compile("org.eclipse.birt.runtime:org.eclipse.birt.runtime:4.3.1") {
+    exclude(group: "org.milyn", module: "flute")
+    exclude(group: "org.eclipse.birt.runtime", module: "org.eclipse.orbit.mongodb")
+  }
+  compile("org.hsqldb:hsqldb")
+  compile("org.springframework.security.oauth:spring-security-oauth2")
+  compile("org.springframework.boot:spring-boot-starter-integration")
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.integration:spring-integration-file")
+  compile("org.springframework.cloud:spring-cloud-starter-eureka-server")
+  compile("com.google.guava:guava:20.0")
+  
+  testCompile("junit:junit")  
+  testCompile("org.springframework:spring-test")
+  testCompile("org.mockito:mockito-all:1.10.19")
+  
+  runtime('org.springframework.security:spring-security-jwt')
+  
+}
+
